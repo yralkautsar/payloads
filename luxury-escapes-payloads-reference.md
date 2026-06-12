@@ -11,10 +11,10 @@
 | Cancel | `DELETE` | `/b2badminapi/api/IcsTransfer/webhook/cancel/{number}`  | none                         | `201`    |
 
 **Create and Update share one endpoint and one schema.**
-They are indistinguishable at the payload level. Differentiation is by `number`: first arrival = create, subsequent arrivals with same `number` = update.
+They are indistinguishable at the payload level. Differentiation is by `number`: first arrival = create, subsequent arrivals with the same `number` = update.
 This is the auto-detect contract the consumer must implement.
 
-`number` is the idempotency / correlation key (example: `ED4C07`).
+`number` is the idempotency/correlation key (example: `ED4C07`).
 
 ## Field reference — `booking-complete`
 
@@ -22,7 +22,7 @@ This is the auto-detect contract the consumer must implement.
 | ------------------------------------------ | ------ | ----------------------------- |
 | `number`                                   | string | Booking ID. Correlation key.  |
 | `stopFollowUpButton`                       | bool   | Partner UI flag. Passthrough. |
-| `customer_email`                           | string | `@luxuryescapes.com` domain.  |
+| `customer_email`                           | string | customer email address        |
 | `customer_given_name` / `customer_surname` | string | PII.                          |
 | `customer_phone`                           | string | PII.                          |
 | `transfer_information`                     | object | See below.                    |
